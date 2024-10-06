@@ -10,11 +10,11 @@ size = Vector2(6, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77t6g"]
 resource_local_to_scene = true
-size = Vector2(4, 5)
+size = Vector2(6, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pklax"]
 resource_local_to_scene = true
-size = Vector2(4, 5)
+size = Vector2(6, 5)
 
 [sub_resource type="Animation" id="Animation_ai5cj"]
 length = 0.001
@@ -261,11 +261,11 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="BodyShape1" type="CollisionShape2D" parent="G/BodyBox"]
-position = Vector2(-7, 0.5)
+position = Vector2(-6, 0.5)
 shape = SubResource("RectangleShape2D_77t6g")
 
 [node name="BodyShape2" type="CollisionShape2D" parent="G/BodyBox"]
-position = Vector2(7, 0.5)
+position = Vector2(6, 0.5)
 shape = SubResource("RectangleShape2D_pklax")
 
 [node name="WallChecker" type="RayCast2D" parent="G"]

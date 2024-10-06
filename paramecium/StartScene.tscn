@@ -42,9 +42,10 @@ text = "Cut in the middle"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 31.0
-offset_right = 190.0
-offset_bottom = 54.0
+offset_left = 35.0
+offset_top = 27.0
+offset_right = 227.0
+offset_bottom = 58.0
 theme_override_font_sizes/font_size = 10
-text = "Use the left mouse button"
+text = "Use the left mouse button,Let more paramecium successfully divide"
+autowrap_mode = 2

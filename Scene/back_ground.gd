@@ -20,7 +20,7 @@ func _ready() -> void:
 	pass
 
 func _update_label() -> void:
-	num.text = "Count: " + str(GameData.smallParamecium_count)
+	num.text = "Scour: " + str(GameData.smallParamecium_count)
 	pass
 
 func _ins_para() -> void:

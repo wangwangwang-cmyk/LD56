@@ -43,7 +43,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 10
-text = "Count:"
+text = "Scour:"
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 1
@@ -76,6 +76,8 @@ text = "text"
 [node name="Knife" parent="." instance=ExtResource("1_pmscf")]
 
 [node name="parame" type="Node2D" parent="."]
+
+[node name="SmallParame" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0

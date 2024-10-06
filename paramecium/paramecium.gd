@@ -56,14 +56,15 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			pass
 	Music.play_sfx("Hurt")
 	speed += 5
-	var r = randi_range(0, 100)
-	var time_direction = 1 if r >= 50 else -1
-	velocity.x += time_direction * 100
+	for i in 2:
+		var body_shape = $G/BodyBox.get_children()[i]
+		body_shape.set_deferred("disabled", true)
 	if current_type > 2:
 		var x = 1
 		Music.play_sfx("Coin")
 		#print("分裂")
 		for i in 2:
+			GameData.smallParamecium_count += 2
 			var new_small_par = small_par.instantiate()
 			get_tree().root.call_deferred("add_child",new_small_par)
 			var body_shape = $G/BodyBox.get_children()[i]
@@ -72,19 +73,19 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			x *= -1
 		call_deferred("queue_free")
 		GameData.parame_count -= 1
-	for i in 2:
-		var body_shape = $G/BodyBox.get_children()[i]
-		body_shape.set_deferred("disabled", true)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
+	var r = randi_range(0, 100)
+	var time_direction = 1 if r >= 50 else -1
+	velocity.x += time_direction * 100
 	for i in 2:
 		var body_shape = $G/BodyBox.get_children()[i]
 		body_shape.set_deferred("disabled", false)
-		
 	pass # Replace with function body.
 
 
 func _on_body_box_area_entered(area: Area2D) -> void:
 	Music.play_sfx("Die")
+	GameData.smallParamecium_count += 1
 	GameData.parame_count -= 1
 	var new_small_par = small_par.instantiate()
 	get_tree().root.call_deferred("add_child",new_small_par)

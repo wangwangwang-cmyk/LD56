@@ -23,10 +23,12 @@ enum Direction{
 var default_dire := Vector2(1, 0)
 
 func _ready() -> void:
-	GameData.smallParamecium_count += 1
 	var r = randi_range(0, 100)
 	direction = Direction.RIGHT if r >= 50 else Direction.LEFT
 	$AnimationPlayer.play("idle")
+	$G/BodyBox/CollisionShape2D.disabled = true
+	await get_tree().create_timer(0.5).timeout
+	$G/BodyBox/CollisionShape2D.disabled = false
 	pass
 
 func _physics_process(delta: float) -> void:
